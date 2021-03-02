@@ -1,7 +1,6 @@
-- copy pem key file ~/.ssh/
+- Copy provided pem key file `~/.ssh/gw/` in your local pc
 
-- ssh -i ~/.ssh/<key_file.pem> ubuntu@<public_ip>
-
+- ssh -i ~/.ssh/gw/<key_file.pem> ubuntu@<public_ip>
 
 Configure AWS Cli
 ```
@@ -24,6 +23,16 @@ terraform output icap_ec2_public_ip
 
 
 - After completion of everything
+
+```
+terraform destroy
+```
+
+- disconnect ssh from bastion 
+
+- In your local pc cd into project `gwtf/bastion`
+
+- destroy bastion as well
 
 ```
 terraform destroy
