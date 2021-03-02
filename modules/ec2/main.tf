@@ -42,7 +42,7 @@ resource "aws_instance" "icap_ec2_node40_ew1a" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
   availability_zone = "eu-west-1a" 
-  key_name = "iz-gw-bastion-key"
+  key_name = var.pem_key_name
   user_data = "${file("modules/ec2/init.sh")}"
   
   tags = merge(
@@ -85,7 +85,7 @@ resource "aws_instance" "icap_ec2_node50_ew1a" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
   availability_zone = "eu-west-1a" 
-  key_name = "iz-gw-bastion-key"
+  key_name = var.pem_key_name
   user_data = "${file("modules/ec2/init2.sh")}"
   
   tags = merge(

@@ -41,3 +41,14 @@ variable "security_group_for_nodes_id" {
   default     = ""
 }
 
+# variable "pem_key_name" {
+#   description = "pem key name"
+#   type        = string
+#   default     = "furqan-gw-ew1"
+# }
+
+variable "pem_key_name" {
+  description = "pem key name"
+  type        = string
+  default     = "icap-bastion-key"
+}
