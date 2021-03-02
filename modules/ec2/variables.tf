@@ -29,6 +29,12 @@ variable "subnet_prv2_id" {
   default     = "subprvisd"
 }
 
+variable "subnets" {
+  description = "all subnets"
+  type        = list
+  default     = ["subprvisd"]
+}
+
 variable "security_group_for_nodes_id" {
   description = "security_group_nodes"
   type        = string

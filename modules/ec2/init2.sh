@@ -13,12 +13,12 @@ touch ~/site-content/index.html
 echo "<html>
  <head>
    <title>
-   The title of web one
+   The title of web two
    </title>
  </head>
  
  <body>
-   Website One.
+   Website Two.
  </body>
  </html>" > ~/site-content/index.html
 

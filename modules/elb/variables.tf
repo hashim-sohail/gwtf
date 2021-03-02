@@ -12,10 +12,10 @@ variable "common_tags" {
 }
 
 
-variable "subnet_prv_id" {
-  description = "private subnet id"
-  type        = string
-  default     = "subprvid"
+variable "subnets" {
+  description = "list of subnets"
+  type        = list
+  default     = ["sub1", "sub2"]
 }
 
 variable "security_group_for_nodes_id" {

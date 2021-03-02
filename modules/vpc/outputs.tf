@@ -15,14 +15,23 @@
 #   value = aws_network_interface.icap_nic_prv_ec1.id
 # }
 
-output "subnet_prv_id" {
-  value = aws_subnet.icap_subnet_prv_ew1b.id
+output "subnet_pub1" {
+  value = aws_subnet.icap_subnet_pub_ew1a
 }
 
-output "subnet_prv2_id" {
-  value = aws_subnet.icap_subnet_prv2_ew1b.id
+
+output "subnet_prv1" {
+  value = aws_subnet.icap_subnet_prv_ew1b
+}
+
+output "subnet_prv2" {
+  value = aws_subnet.icap_subnet_prv2_ew1b
 }
 
 output "security_group_for_nodes_id" {
   value = aws_security_group.icap_sg_nodes.id
 }
+
+# output "security_group_for_nodes" {
+#   value = aws_security_group.icap_sg_nodes
+# }

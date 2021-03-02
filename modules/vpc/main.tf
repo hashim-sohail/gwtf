@@ -112,7 +112,7 @@ resource "aws_route_table_association" "icap_rta_prv2_ew1b" {
 # 10. Create security group for nodes
 resource "aws_security_group" "icap_sg_nodes" {
   name        = "allow_ssh"
-  description = "Allow SSH inbound traffic"
+  description = "Allow HTTP inbound traffic"
   vpc_id      = aws_vpc.icap_vpc_ew1.id
 
   ingress {

@@ -1,18 +1,34 @@
-resource "aws_lb" "icap_alb_ew1b" {
-  name               = "icap-lb-tf"
-  internal           = false
-  load_balancer_type = "application"
-  security_groups    = [var.security_group_for_nodes_id]
+# Create a new load balancer
+resource "aws_elb" "icap_elb_ew1b" {
+  name               = "icap-elb-ew1b"
+  subnets            = [var.subnets[0].id,var.subnets[1].id,var.subnets[2].id]
+  security_groups    =  [var.security_group_for_nodes_id]
 
-  subnet_mapping {
-    subnet_id            = var.subnet_prv_id
-    private_ipv4_address = "10.0.1.50"
+  listener {
+    instance_port     = 80
+    instance_protocol = "http"
+    lb_port           = 80
+    lb_protocol       = "http"
   }
 
-  subnet_mapping {
-    subnet_id            = var.subnet_prv_id
-    private_ipv4_address = "10.0.2.60"
-  }
-  depends_on = [var.ec_instances]
+  # health_check {
+  #   healthy_threshold   = 2
+  #   unhealthy_threshold = 2
+  #   timeout             = 3
+  #   target              = "HTTP:80/"
+  #   interval            = 30
+  # }
 
+  instances                   = [var.ec_instances[0].id, var.ec_instances[1].id]
+  cross_zone_load_balancing   = true
+  idle_timeout                = 400
+  connection_draining         = true
+  connection_draining_timeout = 400
+
+  tags = merge(
+    var.common_tags,
+    {
+      Name = "icap_elb_ew1b"
+    },
+  )
 }

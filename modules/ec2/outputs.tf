@@ -6,5 +6,5 @@
 # }
 
 output "ec_instances" {
-  value = [aws_instance.icap_ec2_node1_ew1b,aws_instance.icap_ec2_node2_ew1b] 
+  value = [aws_instance.icap_ec2_node40_ew1a,aws_instance.icap_ec2_node50_ew1a] 
 }
