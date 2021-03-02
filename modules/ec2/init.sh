@@ -13,7 +13,7 @@ touch ~/site-content/index.html
 echo "<html>
  <head>
    <title>
-   The title of web one
+   Web One
    </title>
  </head>
  

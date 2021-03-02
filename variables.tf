@@ -4,10 +4,10 @@ variable "common_tags" {
   type        = map(string)
   default = {
     Service = "ICAP Cluster"
-    Owner   = "Khawar"
+    Owner   = "Furqan"
     Delete  = "Yes"
     Team    = "DevOps"
-    Scope   = "Created for demo"
+    Scope   = "Created for icap demo"
   }
 }
 
