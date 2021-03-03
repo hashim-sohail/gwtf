@@ -5,7 +5,7 @@
 #   value       = module.vpc.name
 # }
 
-output "icap_elb_ew1b" {
+output "icap_elb_iz" {
   description = "ELB object"
-  value       = aws_elb.icap_elb_ew1b
+  value       = aws_elb.icap_elb_iz
 }

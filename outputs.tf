@@ -10,7 +10,7 @@ output "icap_node2" {
   value       = module.ec2.ec_instances[1].public_ip
 }
 
-output "icap_elb_ew1b" {
+output "icap_elb_iz" {
   description = "ELB of Icap"
-  value       = module.elb.icap_elb_ew1b.dns_name
+  value       = module.elb.icap_elb_iz.dns_name
 }

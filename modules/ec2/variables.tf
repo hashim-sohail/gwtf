@@ -11,22 +11,16 @@ variable "common_tags" {
   }
 }
 
+variable "region" {
+  description = "Region"
+  type        = string
+  default     = "eu-west-1"
+}
+
 variable "network_interface_id_1" {
   description = "network interface id"
   type        = string
   default     = "nwid1"
-}
-
-variable "subnet_prv_id" {
-  description = "private subnet id"
-  type        = string
-  default     = "subprvid"
-}
-
-variable "subnet_prv2_id" {
-  description = "private subnet2 id"
-  type        = string
-  default     = "subprvisd"
 }
 
 variable "subnets" {

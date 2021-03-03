@@ -20,20 +20,3 @@ terraform apply -auto-approve
 
 terraform output icap_ec2_public_ip
 ```
-
-
-- After completion of everything
-
-```
-terraform destroy
-```
-
-- disconnect ssh from bastion 
-
-- In your local pc cd into project `gwtf/bastion`
-
-- destroy bastion as well
-
-```
-terraform destroy
-```

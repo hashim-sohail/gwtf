@@ -14,5 +14,5 @@ variable "common_tags" {
 variable "region" {
   description = "Region"
   type        = string
-  default     = "eu-west-1"
+  default     = "eu-west-2"
 }

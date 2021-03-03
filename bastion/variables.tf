@@ -14,7 +14,7 @@ variable "common_tags" {
 variable "region" {
   description = "Region"
   type        = string
-  default     = "eu-west-1"
+  default     = "eu-west-2"
 }
 
 variable "pem_key_name" {
@@ -22,9 +22,3 @@ variable "pem_key_name" {
   type        = string
   default     = "icap-bastion-key"
 }
-
-# variable "pem_key_name" {
-#   description = "pem key name"
-#   type        = string
-#   default     = "furqan-gw-ew1"
-# }
