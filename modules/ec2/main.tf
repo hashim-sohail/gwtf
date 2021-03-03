@@ -46,8 +46,8 @@ resource "aws_instance" "icap_ec2_node_01_iz" {
 # =================Node-02===============
 
 resource "aws_network_interface" "icap_nic_pub_ec2_node_02" {
-  subnet_id       = var.subnets[2].id
-  private_ips     = ["10.0.101.50"]
+  subnet_id       = var.subnets[0].id
+  # private_ips     = ["10.0.101.50"]
   security_groups = [var.security_group_for_nodes_id]
 }
 

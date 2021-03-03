@@ -21,7 +21,7 @@ variable "vpc_region" {
 variable "vpc_azs" {
   description = "Availability zones for VPC"
   type        = list(string)
-  default     = ["${var.vpc_region}a", "${var.vpc_region}b", "${var.vpc_region}c"]
+  # default     = ["${var.vpc_region}a", "${var.vpc_region}b", "${var.vpc_region}c"]
 }
 
 # variable "vpc_private_subnets_cidr" {

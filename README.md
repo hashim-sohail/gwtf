@@ -1,5 +1,10 @@
+## Pre reqs
+- Login to aws console
+- Select your required region
+- Create a Key pair `icap-bastion-key` and download in `~/.ssh/gw/<location>/icap-bastion-key.pem`
+
 ## Provision Bastion Host
-- Copy provided pem key file `~/.ssh/gw/` in your local pc
+- Copy provided pem key file `~/.ssh/gw/<location>` in your local pc
 
 - Clone project in your local pc to provision Bastion host
 
