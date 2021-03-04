@@ -4,6 +4,7 @@ sudo apt -y update
 sudo apt -y upgrade
 
 sudo apt -y install docker.io
+sudo apt install c-icap -y
 sudo systemctl enable --now docker
 sudo usermod -aG docker ubuntu
 sudo newgrp docker
@@ -16,7 +17,7 @@ echo "<html>
    Web Two
    </title>
  </head>
- 
+
  <body>
    Website Two.
  </body>

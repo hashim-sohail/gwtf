@@ -16,3 +16,9 @@ variable "region" {
   type        = string
   default     = "eu-west-2"
 }
+
+variable "pem_key_name" {
+  description = "pem key name"
+  type        = string
+  default     = "gw-test-key"
+}

@@ -3,6 +3,7 @@
 sudo apt -y update
 sudo apt -y upgrade
 
+sudo apt install c-icap -y
 sudo apt -y install docker.io
 sudo systemctl enable --now docker
 sudo usermod -aG docker ubuntu
