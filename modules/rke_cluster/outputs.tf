@@ -13,3 +13,7 @@ output "addresses" {
 output "internal_ips" {
   value = aws_instance.rke-node[*].private_ip
 }
+
+output "ec_instances" {
+  value = aws_instance.rke-node
+}
