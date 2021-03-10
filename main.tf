@@ -32,7 +32,7 @@ module "vpc" {
 
 module "nodes" {
   source = "./modules/rke_cluster"
-  region        = "us-east-1"
+  region        = var.region
   instance_type = "t2.large"
   cluster_id    = "rke"
 }
@@ -77,12 +77,12 @@ resource "local_file" "kube_cluster_yaml" {
   content  = rke_cluster.cluster.kube_config_yaml
 }
 
-resource "null_resource" "create_icap_pods" {
+#resource "null_resource" "create_icap_pods" {
 
-  provisioner "local-exec" {
-    command = "/bin/bash create_icap.sh"
-  }
-}
+#  provisioner "local-exec" {
+#    command = "/bin/bash create_icap.sh"
+#  }
+#}
 
 module "elb" {
   source = "./modules/elb"

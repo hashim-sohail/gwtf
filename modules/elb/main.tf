@@ -19,7 +19,7 @@ resource "aws_elb" "icap_elb_iz" {
     interval            = 30
   }
 
-  instances                   = [var.ec_instances[0].id, var.ec_instances[1].id]
+  instances                   = [var.ec_instances[0].id, var.ec_instances[1].id, var.ec_instances[2].id, var.ec_instances[3].id]
   cross_zone_load_balancing   = true
   idle_timeout                = 400
   connection_draining         = true
