@@ -35,6 +35,7 @@ module "nodes" {
   region        = var.region
   instance_type = "t2.large"
   cluster_id    = "rke"
+  security_group_for_nodes_id = module.vpc.security_group_for_nodes_id
 }
 
 resource "rke_cluster" "cluster" {

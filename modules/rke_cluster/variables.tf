@@ -13,3 +13,10 @@ variable "cluster_id" {
 variable "docker_install_url" {
   default = "https://releases.rancher.com/install-docker/19.03.sh"
 }
+
+
+variable "security_group_for_nodes_id" {
+  description = "security_group_nodes"
+  type        = string
+  default     = "sg_nodes"
+}
