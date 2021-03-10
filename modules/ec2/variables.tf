@@ -32,7 +32,6 @@ variable "subnets" {
 variable "security_group_for_nodes_id" {
   description = "security_group_nodes"
   type        = string
-  default     = ""
 }
 
 variable "pem_key_name" {

@@ -36,6 +36,7 @@ module "nodes" {
   instance_type = "t2.large"
   cluster_id    = "rke"
   subnets = [module.vpc.subnets_pub1]
+  security_group_for_nodes_id = module.vpc.security_group_for_nodes_id
 }
 
 resource "rke_cluster" "cluster" {
