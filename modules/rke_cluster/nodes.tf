@@ -4,6 +4,13 @@ locals {
   }
 }
 
+resource "aws_network_interface" "icap_nic_node" {
+  count = 4
+
+  subnet_id       = var.subnets[0].id
+  security_groups = [var.security_group_for_nodes_id]
+}
+
 resource "aws_instance" "rke-node" {
   count = 4
 
@@ -11,8 +18,12 @@ resource "aws_instance" "rke-node" {
   instance_type          = var.instance_type
   key_name               = aws_key_pair.rke-node-key.id
   iam_instance_profile   = aws_iam_instance_profile.rke-aws.name
-  vpc_security_group_ids = [var.security_group_for_nodes_id]
   tags                   = local.cluster_id_tag
+
+  network_interface {
+    network_interface_id = aws_network_interface.icap_nic_node[count.index].id
+    device_index         = 0
+  }
 
   provisioner "remote-exec" {
     connection {
