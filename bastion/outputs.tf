@@ -7,3 +7,7 @@ output "icap_ec2_public_ip" {
 #   description = "Elastic IP address of the EC2 instance"
 #   value       = aws_eip.icap_eip_bastion.public_ip
 # }
+
+output "private_key" {
+  value = tls_private_key.node-key.private_key_pem
+}

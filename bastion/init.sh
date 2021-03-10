@@ -28,7 +28,7 @@ echo "<html>
    Bastion Host
    </title>
  </head>
- 
+
  <body>
    Bastion Server.
  </body>

@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  profile = "gw"
+  profile = "default"
   region  = var.region
 }
 
@@ -69,16 +69,16 @@ resource "aws_security_group" "icap_sg_bastion" {
 resource "aws_instance" "icap_ec2_bastion" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
-  availability_zone = "${var.region}a" 
-  key_name = var.pem_key_name
+  availability_zone = "${var.region}a"
+  key_name = aws_key_pair.bastion-node-key.id
   user_data = "${file("init.sh")}"
-  
+
   tags = merge(
     var.common_tags,
     {
       Name = "icap_ec2_bastion"
     },
-  )  
+  )
 }
 
 # Error: Error creating EIP: AddressLimitExceeded: The maximum number of addresses has been reached.
@@ -91,4 +91,9 @@ resource "aws_instance" "icap_ec2_bastion" {
 resource "aws_network_interface_sg_attachment" "icap_sg_attachment" {
   security_group_id    = aws_security_group.icap_sg_bastion.id
   network_interface_id = aws_instance.icap_ec2_bastion.primary_network_interface_id
+}
+
+resource "local_file" "bastion-node-key.pem" {
+  filename = "./bastion-node-key.pem"
+  content  = tls_private_key.node-key.private_key_pem
 }
