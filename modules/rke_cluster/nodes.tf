@@ -4,36 +4,6 @@ locals {
   }
 }
 
-data "aws_availability_zones" "az" {
-}
-
-resource "aws_default_subnet" "default" {
-  availability_zone = data.aws_availability_zones.az.names[count.index]
-  tags              = local.cluster_id_tag
-  count             = length(data.aws_availability_zones.az.names)
-}
-
-resource "aws_security_group" "allow-all" {
-  name        = "rke-default-security-group"
-  description = "rke"
-
-  ingress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = local.cluster_id_tag
-}
-
 resource "aws_instance" "rke-node" {
   count = 4
 
