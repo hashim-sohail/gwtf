@@ -35,6 +35,7 @@ module "nodes" {
   region        = var.region
   instance_type = "t2.large"
   cluster_id    = "rke"
+  subnets = [module.vpc.subnets_pub1]
 }
 
 resource "rke_cluster" "cluster" {
