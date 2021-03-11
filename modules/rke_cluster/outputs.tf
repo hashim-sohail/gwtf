@@ -7,7 +7,7 @@ output "ssh_username" {
 }
 
 output "addresses" {
-  value = aws_instance.rke-node[*].public_dns
+  value = aws_instance.rke-node[*].public_ip
 }
 
 output "internal_ips" {

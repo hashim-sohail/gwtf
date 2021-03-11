@@ -71,6 +71,13 @@ resource "aws_security_group" "icap_sg_nodes" {
   }
 
   ingress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
     description = "HTTP from everywhere"
     from_port   = 80
     to_port     = 80
