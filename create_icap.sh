@@ -19,9 +19,9 @@ git clone https://github.com/k8-proxy/icap-infrastructure.git -b $ICAP_BRANCH &&
 # Clone ICAP SOW Version 
 ICAP_SOW_BRANCH=${ICAP_SOW_BRANCH:-main}
 git clone https://github.com/filetrust/icap-infrastructure.git -b $ICAP_SOW_BRANCH /tmp/icap-infrastructure-sow
-cp  /tmp/icap-infrastructure-sow/adaptation/values.yaml adaptation/
-cp  /tmp/icap-infrastructure-sow/administration/values.yaml administration/
-cp  /tmp/icap-infrastructure-sow/ncfs/values.yaml ncfs/
+cp  /tmp/icap-infrastructure-sow/adaptation/values.yaml ./adaptation/
+cp  /tmp/icap-infrastructure-sow/administration/values.yaml ./administration/
+cp  /tmp/icap-infrastructure-sow/ncfs/values.yaml ./ncfs/
 
 # Admin ui default credentials
 sudo mkdir -p /var/local/rancher/host/c/userstore
