@@ -94,7 +94,7 @@ module "elb" {
   ec_instances = module.nodes.ec_instances
 }
 
-module "icap-server" {
-  source = "./helm"
-  kube_config = rke_cluster.cluster.kube_config_yaml
-}
+#module "icap-server" {
+#  source = "./helm"
+#  kube_config = rke_cluster.cluster.kube_config_yaml
+#}

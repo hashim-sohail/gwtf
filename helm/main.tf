@@ -1,5 +1,5 @@
 provider "kubernetes" {
-  config_path = var.kube_config
+  config_path = "../kube_config_cluster.yml"
 }
 
 resource "kubernetes_namespace" "icap-adaptation" {
@@ -22,7 +22,7 @@ resource "kubernetes_namespace" "icap-ncfs" {
 
 provider "helm" {
   kubernetes {
-    config_path = var.kube_config
+    config_path = "../kube_config_cluster.yml"
   }
 }
 
