@@ -26,9 +26,9 @@ provider "helm" {
   }
 }
 
-resource "helm_release" "adaption" {
-  name       = "adaption"
-  chart      = "./helm_modules/adaption"
+resource "helm_release" "adaptation" {
+  name       = "adaptation"
+  chart      = "./helm_modules/adaptation"
   namespace  = "icap-adaptation"
 }
 
