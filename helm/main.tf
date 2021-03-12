@@ -32,9 +32,9 @@ resource "helm_release" "adaptation" {
   namespace  = "icap-adaptation"
 }
 
-resource "helm_release" "adminstration" {
-  name       = "adminstration"
-  chart      = "./helm_modules/adminstration"
+resource "helm_release" "administration" {
+  name       = "administration"
+  chart      = "./helm_modules/administration"
   namespace  = "management-ui"
 }
 
