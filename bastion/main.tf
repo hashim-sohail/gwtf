@@ -93,7 +93,7 @@ resource "aws_network_interface_sg_attachment" "icap_sg_attachment" {
   network_interface_id = aws_instance.icap_ec2_bastion.primary_network_interface_id
 }
 
-resource "local_file" "bastion-node-key.pem" {
+resource "local_file" "bastion-node-key" {
   filename = "./bastion-node-key.pem"
   content  = tls_private_key.node-key.private_key_pem
 }
