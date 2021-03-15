@@ -135,7 +135,7 @@ resource "kubernetes_secret" "ncfspolicyupdateserviceref" {
 
 resource "kubernetes_secret" "smtpsecret" {
   metadata {
-    name = "smtpsecretv"
+    name = "smtpsecret"
     namespace = "management-ui"
   }
 
