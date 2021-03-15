@@ -25,3 +25,23 @@ variable "SmtpUser" {
 variable "SmtpPass" {
     description = "SMTP Password"
 }
+
+variable "TokenSecret" {
+    description = "TokenSecret"
+}
+
+variable "TokenLifetime" {
+    description = "TokenLifetime"
+}
+
+variable "EncryptionSecret" {
+    description = "EncryptionSecret"
+}
+
+variable "ManagementUIEndpoint" {
+    description = "ManagementUIEndpoint"
+}
+
+variable "SmtpSecureSocketOptions" {
+    description = "SmtpSecureSocketOptions"
+}

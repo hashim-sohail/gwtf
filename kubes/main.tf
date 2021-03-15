@@ -144,6 +144,11 @@ resource "kubernetes_secret" "smtpsecret" {
     SmtpPort = var.SmtpPort
     SmtpUser = var.SmtpUser
     SmtpPass = var.SmtpPass
+    TokenSecret = var.TokenSecret
+    TokenLifetime = var.TokenLifetime
+    EncryptionSecret = var.EncryptionSecret
+    ManagementUIEndpoint = var.ManagementUIEndpoint
+    SmtpSecureSocketOptions = var.SmtpSecureSocketOptions
   }
 
 }
