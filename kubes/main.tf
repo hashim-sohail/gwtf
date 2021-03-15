@@ -20,10 +20,10 @@ resource "kubernetes_namespace" "icap-ncfs" {
   }
 }
 
-resource "kubernetes_secret" "example" {
+resource "kubernetes_secret" "docker-cfg" {
   metadata {
     name = "docker-cfg"
-    namespace = kubernetes_namespace.icap-adaptation.metadata.name
+    namespace = "icap-adaptation"
   }
 
   data = {
